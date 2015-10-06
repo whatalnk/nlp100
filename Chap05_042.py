@@ -6,7 +6,7 @@ with open(os.path.normcase("output/Chapter5/neko.txt.cabocha"), "r", encoding='u
     cabocha = [l.rstrip("\n") for l in f.readlines()]
 
 sentences = cabocha_to_chunk_list(cabocha)
-with open(os.path.normcase("output/Chapter5/srcs_to_dst.tsv"), "w", encoding='utf-8') as f:
+with open(os.path.normcase("output/Chapter5/_042.tsv"), "w", encoding='utf-8') as f:
     for chunk_list in sentences:
         for chunk in chunk_list:
             dst = int(chunk.dst.rstrip("D"))
