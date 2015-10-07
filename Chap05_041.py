@@ -23,13 +23,13 @@ def cabocha_to_chunk_list(cabocha):
             if line[0] == "*":
                 if len(morphs) == 0:
                     out = line.rstrip("\n").split(" ")
-                    dst = out[2]
-                    srcs = out[1]
+                    dst = int(out[2].rstrip("D"))
+                    srcs = int(out[1])
                 else:
                     sentence.append(Chunk(morphs, dst, srcs))
                     out = line.rstrip("\n").split(" ")
-                    dst = out[2]
-                    srcs = out[1]
+                    dst = int(out[2].rstrip("D"))
+                    srcs = int(out[1])
                     morphs = []
             else:
                 out1 = line.rstrip("\n").split("\t")
