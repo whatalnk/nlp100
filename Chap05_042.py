@@ -9,7 +9,7 @@ sentences = cabocha_to_chunk_list(cabocha)
 with open(os.path.normcase("output/Chapter5/_042.tsv"), "w", encoding='utf-8') as f:
     for chunk_list in sentences:
         for chunk in chunk_list:
-            dst = int(chunk.dst.rstrip("D"))
+            dst = chunk.dst
             if dst != -1:
                 str_from = "".join([m.surface for m in chunk.morphs if m.pos != "記号"])
                 str_to = "".join([m.surface for m in chunk_list[dst].morphs if m.pos != "記号"])

@@ -11,7 +11,7 @@ sentences = cabocha_to_chunk_list(cabocha)
 node_list = []
 chunk_list = sentences[int(sys.argv[1])]
 for chunk in chunk_list:
-    dst = int(chunk.dst.rstrip("D"))
+    dst = chunk.dst
     if dst != -1:
         str_srcs = "".join([m.surface for m in chunk.morphs if m.pos != "記号"])
         str_dst = "".join([m.surface for m in chunk_list[dst].morphs if m.pos != "記号"])

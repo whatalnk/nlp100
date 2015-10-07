@@ -9,7 +9,7 @@ sentences = cabocha_to_chunk_list(cabocha)
 with open(os.path.normcase("output/Chapter5/_043.tsv"), "w", encoding='utf-8') as f:
     for chunk_list in sentences:
         for chunk in chunk_list:
-            dst = int(chunk.dst.rstrip("D"))
+            dst = chunk.dst
             if dst != -1:
                 pos_from = [m.pos for m in chunk.morphs]
                 pos_to = [m.pos for m in chunk_list[dst].morphs]
