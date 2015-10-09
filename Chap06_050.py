@@ -12,5 +12,5 @@ with open(os.path.normcase("data/nlp.txt"), "r", encoding="utf-8") as f:
                 print(line[i:mm.start()+2:])
                 i = mm.start()+2
             print(line[i:])
-        else:
+        elif line !="":
             print(line)
