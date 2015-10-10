@@ -19,3 +19,6 @@ with gzip.open(os.path.normpath('data/artist.json.gz'), 'rt', encoding='utf-8') 
         db.set(name, tags)
 
 
+# tags = db.unpackb(db.get(name), encoding="utf-8")
+# for tag in tags:
+#     print(tag["value"], tag["count"])
