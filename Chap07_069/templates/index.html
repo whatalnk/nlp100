@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <div class="container">
+    <h1>アーティスト情報の検索</h1>
+    <p>アーティスト名を入力してください</p>
+
+    <form action="/post" method="post" class="form-inline">
+      <label for="name">名前</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+      <button type="submit" class="btn btn-default">送信する</button>
+    </form>
+
+    {% if name %}
+      <p>{{ name }} についての情報です．</p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>名前</th>
+            <th>別名</th>
+            <th>タグ</th>
+            <th>レーティング</th>
+          </tr>
+        </thead>
+        {% for i in artist_info %}
+        <tr>
+          <td>{{ i["name"] }}</td>
+          <td>{{ i["alases"] }}</td>
+          <td>{{ i["tags"] }}</td>
+          <td>{{ i["rating"] }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    {% endif %}
+  </div>
+
+{% endblock %}
+
